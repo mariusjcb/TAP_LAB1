@@ -8,13 +8,10 @@
 
 import Foundation
 
-//MONEDE
-let coins = [1, 10, 2, 20, 25]
-
-//SUMA TOTALA
-let moneySum = 41
+//CITIRE DATE
+let coins = ExchangeConsole.readCoins()
+let moneySum = ExchangeConsole.readMoneySum()
 
 //REZULTAT
 let result = Exchanger(withCoins: coins).changeMoney(moneySum)
-
-print(result ?? "Suma nu se poate imparti in monedele de schimb")
+ExchangeConsole.printResult(result)

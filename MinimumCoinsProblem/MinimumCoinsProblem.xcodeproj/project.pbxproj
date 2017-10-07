@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FB5A71321F88F7FD00A04785 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A71311F88F7FD00A04785 /* main.swift */; };
 		FB5A71391F88F82A00A04785 /* Exchanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A71381F88F82A00A04785 /* Exchanger.swift */; };
+		FB5A713B1F88F99F00A04785 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A713A1F88F99F00A04785 /* String.swift */; };
+		FB5A71411F89073400A04785 /* ExchangeConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A71401F89073400A04785 /* ExchangeConsole.swift */; };
+		FB5A71451F89094700A04785 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A71441F89094700A04785 /* Counter.swift */; };
+		FB5A71471F890EA200A04785 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A71461F890EA200A04785 /* Defaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +31,11 @@
 		FB5A712E1F88F7FD00A04785 /* MinimumCoinsProblem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MinimumCoinsProblem; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5A71311F88F7FD00A04785 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FB5A71381F88F82A00A04785 /* Exchanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Exchanger.swift; path = ../../Exchanger.swift; sourceTree = "<group>"; };
+		FB5A713A1F88F99F00A04785 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FB5A71401F89073400A04785 /* ExchangeConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeConsole.swift; sourceTree = "<group>"; };
+		FB5A71441F89094700A04785 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		FB5A71461F890EA200A04785 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		FB5A71481F890F9100A04785 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +52,7 @@
 		FB5A71251F88F7FD00A04785 = {
 			isa = PBXGroup;
 			children = (
+				FB5A71481F890F9100A04785 /* README.md */,
 				FB5A71301F88F7FD00A04785 /* MinimumCoinsProblem */,
 				FB5A712F1F88F7FD00A04785 /* Products */,
 			);
@@ -59,10 +69,30 @@
 		FB5A71301F88F7FD00A04785 /* MinimumCoinsProblem */ = {
 			isa = PBXGroup;
 			children = (
+				FB5A713F1F89072800A04785 /* Helpers */,
+				FB5A713E1F88FADE00A04785 /* Extensions */,
 				FB5A71381F88F82A00A04785 /* Exchanger.swift */,
+				FB5A71461F890EA200A04785 /* Defaults.swift */,
 				FB5A71311F88F7FD00A04785 /* main.swift */,
 			);
 			path = MinimumCoinsProblem;
+			sourceTree = "<group>";
+		};
+		FB5A713E1F88FADE00A04785 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB5A713A1F88F99F00A04785 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB5A713F1F89072800A04785 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FB5A71401F89073400A04785 /* ExchangeConsole.swift */,
+				FB5A71441F89094700A04785 /* Counter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB5A71451F89094700A04785 /* Counter.swift in Sources */,
 				FB5A71321F88F7FD00A04785 /* main.swift in Sources */,
+				FB5A713B1F88F99F00A04785 /* String.swift in Sources */,
+				FB5A71471F890EA200A04785 /* Defaults.swift in Sources */,
 				FB5A71391F88F82A00A04785 /* Exchanger.swift in Sources */,
+				FB5A71411F89073400A04785 /* ExchangeConsole.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

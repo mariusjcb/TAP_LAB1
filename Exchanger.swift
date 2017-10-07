@@ -1,5 +1,5 @@
 //
-//  Exchanger.swift
+//  Exchange.swift
 //  
 //
 //  Created by Marius Ilie on 07/10/2017.
@@ -10,8 +10,9 @@ import Foundation
 class Exchanger {
     private(set) var coins: [Int]! {
         didSet {
+            // FILTREZ PENTRU A ELIMINA MONEDELE INVALIDE ( <= 0 )
             // SORTEZ DESC
-            coins?.sort(by: { $0 > $1 })
+            coins = coins?.filter({ $0 > 0 }).sorted(by: { $0 > $1 })
         }
     }
     
