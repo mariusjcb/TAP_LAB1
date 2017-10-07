@@ -11,6 +11,8 @@ import Foundation
 class ExchangeConsole {
     private init() { }
     
+    //MARK: - Validators
+    
     private class func hasValidCoins(_ coins: [Int]?) -> Bool {
         return coins?.isEmpty == false
     }
@@ -22,6 +24,8 @@ class ExchangeConsole {
         
         return validSum > 0
     }
+    
+    //MARK: - Readers
     
     class func readCoins() -> [Int] {
         print(DefaultStrings.coins + ":")
@@ -46,6 +50,8 @@ class ExchangeConsole {
         
         return Int(money!)!
     }
+    
+    //MARK: - Printers
     
     class func printResult(_ result: [Int]?, format: String = DefaultStrings.exchangeFormat) {
         print(DefaultStrings.exchangeResult + ":")
