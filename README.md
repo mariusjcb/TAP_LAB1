@@ -1,7 +1,7 @@
 # TAV Lab 1
 # - Marius Ilie @243
 
-The **"Exchanger"** class is located in the root folder. Another classes used in this project, like Defaults, Helpers and Extensions are located in **"MinimumCoinsProblem"** folder.
+The **"Exchanger"** class is located in the root folder. The other classes used in this project, like Defaults, Helpers and Extensions are located in **"MinimumCoinsProblem"** folder.
 
 Mac Requirements:
 -
