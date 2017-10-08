@@ -1,4 +1,6 @@
-# TAV Lab 1
+[See Java Version](https://github.com/mariusjcb/TAP_LAB1//tree/java)
+
+# TAV Lab 1. Swift Version
 # - Marius Ilie @243
 
 The **"Exchanger"** class is located in the root folder. The other classes used in this project, like Defaults, Helpers and Extensions are located in **"MinimumCoinsProblem"** folder.
