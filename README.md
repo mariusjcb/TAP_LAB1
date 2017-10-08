@@ -1,3 +1,5 @@
+Open [Swift Version](https://github.com/mariusjcb/TAP_LAB1/)
+
 # TAV Lab 1. Java Version
 # - Marius Ilie @243
 
