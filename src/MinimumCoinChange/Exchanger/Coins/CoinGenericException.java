@@ -1,4 +1,4 @@
-package MinimumCoinChange.Coins;
+package MinimumCoinChange.Exchanger.Coins;
 
 public class CoinGenericException extends RuntimeException {
     public CoinGenericException() { }

@@ -1,4 +1,4 @@
-package MinimumCoinChange.Coins;
+package MinimumCoinChange.Exchanger.Coins;
 
 import java.util.*;
 import java.util.function.*;
@@ -8,11 +8,9 @@ import java.lang.*;
 public class Coins {
     private ArrayList<Integer> coins = new ArrayList<Integer>();
 
-    private boolean hasValidCoin(int coin) {
-        return coin <= 0;
-    }
+    private Coins() { }
 
-    public Coins(int... coins) throws CoinGenericException {
+    public Coins(int... coins) throws MinimumCoinChange.Exchanger.Coins.CoinGenericException {
         for (int coin : coins) {
             this.add(coin);
         }
@@ -20,21 +18,25 @@ public class Coins {
         this.sortDesc();
     }
 
+    private boolean hasValidCoin(int coin) {
+        return coin <= 0;
+    }
+
     public void get(int index) {
         coins.get(index);
     }
 
-    public void add(int coin) throws CoinGenericException {
+    public void add(int coin) throws MinimumCoinChange.Exchanger.Coins.CoinGenericException {
         if (hasValidCoin(coin)) {
-            throw CoinGenericException.invalidValue(coin);
+            throw MinimumCoinChange.Exchanger.Coins.CoinGenericException.invalidValue(coin);
         }
 
         coins.add(coin);
     }
 
-    public void remove(int coin) throws CoinGenericException {
+    public void remove(int coin) throws MinimumCoinChange.Exchanger.Coins.CoinGenericException {
         if (!coins.contains(coin)) {
-            throw CoinGenericException.absentCoin(coin);
+            throw MinimumCoinChange.Exchanger.Coins.CoinGenericException.absentCoin(coin);
         }
 
         coins.remove(coin);
