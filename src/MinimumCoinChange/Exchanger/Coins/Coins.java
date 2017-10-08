@@ -3,8 +3,6 @@ package MinimumCoinChange.Exchanger.Coins;
 import java.util.*;
 import java.util.function.*;
 
-import java.lang.*;
-
 public class Coins {
     private ArrayList<Integer> coins = new ArrayList<Integer>();
 

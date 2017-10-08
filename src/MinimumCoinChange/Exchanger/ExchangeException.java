@@ -11,6 +11,6 @@ public class ExchangeException extends RuntimeException {
     }
 
     public static ExchangeException impossibleExchange(int money) {
-        return new ExchangeException("It's impossible to change '" + money + "' with inserted coin types.");
+        return new ExchangeException("It's impossible to exchange '" + money + "'.");
     }
 }

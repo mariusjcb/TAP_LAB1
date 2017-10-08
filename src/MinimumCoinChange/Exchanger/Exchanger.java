@@ -1,9 +1,8 @@
 package MinimumCoinChange.Exchanger;
+import MinimumCoinChange.Utils.CoinArrayUtils;
 import MinimumCoinChange.Exchanger.Coins.Coins;
 
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class Exchanger {
     private Coins coins;
@@ -34,7 +33,7 @@ public class Exchanger {
 
         Integer[] changeCoins = getPotentialResult(money);
 
-        Optional<Integer> changeSum = sumArray(changeCoins);
+        Optional<Integer> changeSum = CoinArrayUtils.sumArray(changeCoins);
         if (!hasValidChange(changeSum, money)) {
             throw ExchangeException.impossibleExchange(money);
         }
@@ -64,7 +63,7 @@ public class Exchanger {
                     potentialChange.add(result);
                 }
 
-                Optional<Integer> potentialSum = sumArray(potentialChange);
+                Optional<Integer> potentialSum = CoinArrayUtils.sumArray(potentialChange);
                 if (potentialSum.isPresent() && potentialSum.get() == value) {
                     potentialResults.add(potentialChange);
                 }
@@ -76,30 +75,12 @@ public class Exchanger {
                 return left.size() - right.size();
             });
 
-            Integer[] result = convertToIntegerArray(potentialResults.get(0));
+            Integer[] result = CoinArrayUtils.convertToIntegerArray(potentialResults.get(0));
             storedValues.put(value, result);
 
             return result;
         }
 
         return new Integer[0];
-    }
-
-    private Integer[] convertToIntegerArray(ArrayList<Integer> array) {
-        Object[] arr = array.toArray();
-        return Arrays.copyOf(arr, arr.length, Integer[].class);
-    }
-
-    private Optional<Integer> sumArray(ArrayList<Integer> array) {
-        return sumArray(convertToIntegerArray(array));
-    }
-
-    private Optional<Integer> sumArray(Integer[] array) {
-        Stream<Integer> stream = Arrays.stream(array);
-        Optional<Integer> sum = stream.reduce((left, right) -> {
-            return left + right;
-        });
-
-        return sum;
     }
 }
