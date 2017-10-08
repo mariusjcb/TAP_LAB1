@@ -1,4 +1,5 @@
 package MinimumCoinChange;
+import MinimumCoinChange.ExchangeConsole.ExchangeConsole;
 import MinimumCoinChange.Exchanger.*;
 import MinimumCoinChange.Exchanger.Coins.*;
 
@@ -7,11 +8,26 @@ import java.util.Iterator;
 public class Main {
     public static void main(String[] args) {
         try {
-            Exchanger exchanger = new Exchanger(1, 2, 20, 10, 15);
-            Integer[] change = exchanger.changeMoney(41);
-            System.out.print(change);
-        } catch(ExchangeException error) {
-            System.out.print(error.getMessage());
+            exchangeUserMoney();
+        } catch(RuntimeException error) {
+            errorHandler(error);
         }
+    }
+
+    private static void exchangeUserMoney() {
+        System.out.println();
+
+        Integer[] coins = ExchangeConsole.readCoins();
+        Integer totalSum = ExchangeConsole.readMoneySum();
+
+        Integer[] exchangeResult = new Exchanger(coins).changeMoney(totalSum);
+        ExchangeConsole.printResult(exchangeResult);
+    }
+
+    private static void errorHandler(RuntimeException error) {
+        System.out.println();
+        System.out.print(error.getMessage());
+
+        exchangeUserMoney();
     }
 }

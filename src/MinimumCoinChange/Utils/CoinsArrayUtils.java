@@ -2,10 +2,13 @@ package MinimumCoinChange.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class CoinArrayUtils {
+public class CoinsArrayUtils {
     public static Integer[] convertToIntegerArray(ArrayList<Integer> array) {
         Object[] arr = array.toArray();
         return Arrays.copyOf(arr, arr.length, Integer[].class);
@@ -22,5 +25,13 @@ public class CoinArrayUtils {
         });
 
         return sum;
+    }
+
+    public static void elementsFrequency(Integer[] array, BiConsumer<Integer, Integer> action) {
+        Arrays.stream(array)
+                .collect(Collectors.groupingBy(s -> s))
+                .forEach((key, value) -> {
+                    action.accept(key, value.size());
+                });
     }
 }

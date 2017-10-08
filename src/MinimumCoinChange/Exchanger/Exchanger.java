@@ -1,5 +1,5 @@
 package MinimumCoinChange.Exchanger;
-import MinimumCoinChange.Utils.CoinArrayUtils;
+import MinimumCoinChange.Utils.CoinsArrayUtils;
 import MinimumCoinChange.Exchanger.Coins.Coins;
 
 import java.util.*;
@@ -8,7 +8,7 @@ public class Exchanger {
     private Coins coins;
     private Map<Integer, Integer[]> storedValues = new HashMap<Integer, Integer[]>();
 
-    public Exchanger(int... coins) throws ExchangeException {
+    public Exchanger(Integer[] coins) throws ExchangeException {
         this.coins = new Coins(coins);
     }
 
@@ -33,7 +33,7 @@ public class Exchanger {
 
         Integer[] changeCoins = getPotentialResult(money);
 
-        Optional<Integer> changeSum = CoinArrayUtils.sumArray(changeCoins);
+        Optional<Integer> changeSum = CoinsArrayUtils.sumArray(changeCoins);
         if (!hasValidChange(changeSum, money)) {
             throw ExchangeException.impossibleExchange(money);
         }
@@ -63,7 +63,7 @@ public class Exchanger {
                     potentialChange.add(result);
                 }
 
-                Optional<Integer> potentialSum = CoinArrayUtils.sumArray(potentialChange);
+                Optional<Integer> potentialSum = CoinsArrayUtils.sumArray(potentialChange);
                 if (potentialSum.isPresent() && potentialSum.get() == value) {
                     potentialResults.add(potentialChange);
                 }
@@ -75,7 +75,7 @@ public class Exchanger {
                 return left.size() - right.size();
             });
 
-            Integer[] result = CoinArrayUtils.convertToIntegerArray(potentialResults.get(0));
+            Integer[] result = CoinsArrayUtils.convertToIntegerArray(potentialResults.get(0));
             storedValues.put(value, result);
 
             return result;

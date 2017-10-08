@@ -8,7 +8,7 @@ public class Coins {
 
     private Coins() { }
 
-    public Coins(int... coins) throws MinimumCoinChange.Exchanger.Coins.CoinGenericException {
+    public Coins(Integer[] coins) throws MinimumCoinChange.Exchanger.Coins.CoinGenericException {
         for (int coin : coins) {
             this.add(coin);
         }
