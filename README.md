@@ -1,4 +1,4 @@
-[See Java Version](https://github.com/mariusjcb/TAP_LAB1//tree/java)
+Open [Java Version](https://github.com/mariusjcb/TAP_LAB1//tree/java)
 
 # TAV Lab 1. Swift Version
 # - Marius Ilie @243
